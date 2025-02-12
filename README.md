@@ -69,19 +69,6 @@ git clone [repository-url]
 
 # Install dependencies
 yarn install
-# or
-npm install
-
-# Create environment file
-cp .env.example.local .env.local
-```
-
-### Configuration
-
-Update `.env.local` with your configuration:
-
-```env
-VITE_PROJECT_ID=your_wallet_connect_project_id
 ```
 
 ### Running the Application
@@ -89,18 +76,14 @@ VITE_PROJECT_ID=your_wallet_connect_project_id
 ```bash
 # Start development server
 yarn dev
-# or
-npm run dev
 ```
 
-The application will be available at `http://localhost:5173`
+The application should be available at `http://localhost:5173`
 
 ### Building for Production
 
 ```bash
 yarn build
-# or
-npm run build
 ```
 
 ## Usage
@@ -135,7 +118,7 @@ npm run build
 
 ### Market IDs
 
-The application uses Morpho Blue market IDs. The default market ID is set to a DAI market, but you can modify it for other markets.
+The application uses Morpho Blue market IDs. The default market ID is set by default to the [sUSDe/DAI market](https://app.morpho.org/ethereum/market/0x39d11026eae1c6ec02aa4c0910778664089cdd97c3fd23f68f7cd05e2e95af48/susde-dai), but you can modify it for other markets.
 
 ### Simulation State
 
@@ -149,24 +132,6 @@ The interface includes comprehensive error handling for:
 - Transaction failures
 - Position health checks
 - Invalid input validation
-
-## Testing
-
-For local testing with Anvil:
-
-```bash
-# Start local Ethereum node
-anvil
-
-# Run tests
-yarn test
-# or
-npm test
-```
-
-## Contributing
-
-Contributions are welcome! Please read our contributing guidelines and submit pull requests for any enhancements.
 
 ## License
 

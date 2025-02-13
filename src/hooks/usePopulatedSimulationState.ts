@@ -42,6 +42,10 @@ export const usePopulatedSimulationState = (marketId: MarketId) => {
   }, [address, bundler]);
 
   // Use effectiveChainId for tokens
+  // below we are using the sUSDe/DAI market, so we need the following tokens:
+  // - DAI
+  // - sUSDe
+  // - DAI_sUSDe
   const tokens = useMemo<string[]>(() => {
     const chainAddresses = getChainAddresses(effectiveChainId);
 
@@ -51,6 +55,7 @@ export const usePopulatedSimulationState = (marketId: MarketId) => {
     return [NATIVE_ADDRESS, dai, dai_sUsde.collateralToken];
   }, [effectiveChainId]);
 
+  // if any vaults are needed, add them here
   const vaults = useMemo<string[]>(() => [], []);
 
   // Helper function to extract a meaningful error message
